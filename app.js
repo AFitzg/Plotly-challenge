@@ -1,6 +1,6 @@
 // building the charts both bar and bubble Per instructions needed certain variables so that x and y values can be plotted
 function buildCharts(newID) {
-    d3.json("data/samples.json").then (importedData =>{
+    d3.json("samples.json").then (importedData =>{
         console.log(importedData)
     
 
@@ -69,7 +69,7 @@ function buildCharts(newID) {
 // build demographic info box
 function buildDemographicData(newID) {
 
-    d3.json("data/samples.json").then((demographicdata)=> {
+    d3.json("samples.json").then((demographicdata)=> {
 
         var newdata = demographicdata.metadata.filter(sample_data => sample_data.id.toString() === newID)[0];
 
@@ -91,7 +91,7 @@ function init() {
     var dropdown = d3.select("#selDataset");
     // select seldataset with onchanged function to create your initial function as well as on changed 
 
-    d3.json("data/samples.json").then((demographicdata)=> {
+    d3.json("samples.json").then((demographicdata)=> {
         //console.log(demographicdata);
 
     var Idnames = demographicdata.names;
